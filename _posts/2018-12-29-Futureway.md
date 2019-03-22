@@ -9,7 +9,6 @@ author: Fomo
 * content
 {:toc}
 
-> “立足当下！”
 
 ## WHY
 
