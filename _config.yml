@@ -6,7 +6,7 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: 佛莫
+title: Fomo'Blog
 brief-intro: Positive&optimistic
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://fomodj.github.io" # the base hostname & protocol for your site
@@ -19,7 +19,7 @@ facebook_username:
 github_username:  
 email: 
 weibo_username: 
-zhihu_username: 
+zhihu_username: shi-jin-17-10
 linkedIn_username: 
 dribbble_username:
 
