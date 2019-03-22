@@ -7,7 +7,7 @@
 
 # Site settings
 title: Fomo'Blog
-brief-intro: Positive&optimistic
+brief-intro: Positive&Optimistic
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://fomodj.github.io" # the base hostname & protocol for your site
 
