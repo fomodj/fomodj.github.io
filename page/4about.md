@@ -11,7 +11,7 @@ type: page
 
 ## 关于我
 
-<iframe src="https://pic4.zhimg.com/v2-df7490970e298b64f2102bd036931d65_xl.jpg" style="border: 0;height: 200px;width: 200px;overflow: hidden;" frameBorder="0"></iframe>
+<iframe src="http://tvax2.sinaimg.cn/crop.0.0.1002.1002.1024/007OcPNTly8g3a2p70g34j30ru0ruq4c.jpg" style="border: 0;height: 200px;width: 200px;overflow: hidden;" frameBorder="0"></iframe>
 
 世界那么大，我想去看看。
 
