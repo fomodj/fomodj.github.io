@@ -22,7 +22,7 @@ author: Fomo
 ```python
 # 读取初始数据
 def recover_info(list):
-    f = open("data.txt", 'r')
+    f = open("data.txt", 'r',encoding='utf-8')
     line = f.readline()
     while line != "":
         line0 = line.rstrip()
@@ -93,7 +93,7 @@ def showall(list):
 
 # 保存数据
 def savedata(list):
-    f = open("data.txt", 'w')
+    f = open("data.txt", 'w',encoding='utf-8')
     for i in range(len(list)):
         s = str(list[i]).replace('[', '').replace(']', '')  # 去除[],这两行按数据不同，可以选择
         s = s.replace("'", '').replace(',', '') + '\n'  # 去除单引号，逗号，每行末尾追加换行符
@@ -151,7 +151,7 @@ if __name__=="__main__":
 ```python
 # 读取初始数据
 def recover_info(dict):
-    f = open("data.txt", 'r')
+    f = open("data.txt", 'r',encoding='utf-8')
     list1 = []
     line = f.readline()
     while line != "":
@@ -218,7 +218,7 @@ def showall(dict):
 
 # 保存数据
 def savedata(dict):
-    f = open("data.txt", 'w')
+    f = open("data.txt", 'w',encoding='utf-8')
     for k, v in dict.items():  # 遍历字典中的键值
         s2 = str(v)  # 把字典的值转换成字符型
         f.write(k + " "+ s2 + '\n')
