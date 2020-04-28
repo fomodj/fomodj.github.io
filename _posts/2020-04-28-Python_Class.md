@@ -7,15 +7,17 @@
 ## 二．实验原理
 类的定义：利用所提供的功能描述，用代码实现类的定义及使用
 ## 三．实验步骤与内容
-（1）编写一个名为Employee的类，其中包含关于员工的以下数据：姓名、ID号码、部门和职位。
-（2）完成Employee类定义后，编写一个程序创建三个Employee对象来保存以下数据, 程序应将这些数据存储在三个对象中，然后在屏幕上显示每个员工的数据：
+1. 编写一个名为Employee的类，其中包含关于员工的以下数据：姓名、ID号码、部门和职位。
+2. 完成Employee类定义后，编写一个程序创建三个Employee对象来保存以下数据, 程序应将这些数据存储在三个对象中，然后在屏幕上显示每个员工的数据：
+
 |姓名(name)|ID号码 (id)|部门(department)|职位(position)|
 | ------ | ------ | ------ |------ |
 |Susan Meyers|47899|Accounting|Vice President|
 |Mark Johns|39119|IT|Programmer|
 |Joy Rogers|81774|Manufacturing|Engineer|
-（3）编写一个程序，将三个对象的数据存储在一个名为employee.data的文件中。
-（4）编写一个程序，在employee.data文件中的数据反序列化，并将每个人的信息保存在一个字典中，所有人的信息放在一个列表中。
+
+3. 编写一个程序，将三个对象的数据存储在一个名为employee.data的文件中。
+4. 编写一个程序，在employee.data文件中的数据反序列化，并将每个人的信息保存在一个字典中，所有人的信息放在一个列表中。
 
 ## 四：代码
 ### employee.py
@@ -31,7 +33,6 @@ class Employee:
             '\nPosition:'+self.__position
 ```
 ### employee_test.py
-
 ```python
 from employee import Employee
 def main():
@@ -50,9 +51,7 @@ main()
 ```python
 import pickle
 from employee import Employee
-
 FILENAME = 'employee.data'
-
 def main():
 
     # 创建并打开文件
@@ -70,7 +69,6 @@ def main():
 main()
 ```
 ### unpickle_employee.py
-
 ```python
 import pickle
 from employee import Employee
