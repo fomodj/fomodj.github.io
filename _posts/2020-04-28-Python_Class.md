@@ -1,3 +1,11 @@
+---
+layout: post
+title:  "关于Python的类方法的小实验"
+categories: Python学习
+tags: Python 类 序列化 
+author: Fomo
+---
+
 # 实验：类的定义与使用
 ## 一．实验目的
 1. 学会定义类
