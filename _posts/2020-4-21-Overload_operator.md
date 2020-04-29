@@ -11,11 +11,48 @@ author: Fomo
 > 一种根据所使用的操作数更改Python中运算符的含义的做法。Python操作系统适用于内置类。
 > 但同一运算符的行为在不同的类型有所不同。例如；"+"运算符将对两个数字执行算术加法，合并两个列表并连接两个字符串。Python中的这个功能，允许相同的操作符根据上下文的不同，其含义称为运算符重载。
 
-
 下面以分数为例做重载运算符的示例：
 ### rational.py
 
 ```python
+class Rational:
+    '''
+    Rational number
+    denominator 分母
+    numeration 分子
+    '''
+    def __init__(self,numerator,denominator):
+        self.__numeration = numerator
+        self.__denominator = denominator
+        self.__reduce = self.__reduce__()
+
+    def get_denominator(self):
+        return self.__denominator
+
+    def set_denominator(self,denominator):
+        if not isinstance(denominator,float) and not isinstance(denominator,int):
+            print("必须是浮点型或者整型")
+            return
+        self.__denominator = denominator
+
+    def get_numeration(self):
+        return self.__numeration
+
+    def set_numeration(self,numeration):
+        self.__numeration = numeration
+
+    def gcd(a,b):# 求a和b的公倍数
+        if a is b:
+            return a
+        elif a.__numeration == b.__numeration and \
+                a.__denominator == b.__denominator:
+            return a
+        else:
+            new_nu = a.__numeration * b.__numeration
+            new_de = a.__denominator * b.__denominator
+            new_rational = Rational(new_nu, new_de)
+            return new_rational
+
     def __reduce__(self):# 对有理数进行约分，最简分数
         for i in range(2, self.__denominator):
             while (self.__denominator % i == 0 and self.__numeration % i == 0):
