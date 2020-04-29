@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "关于Python的分数类及运算重载符"
+title:  "关于Python的分数类及运算符重载"
 categories: Python学习
-tags: Python 类 运算重载符 
+tags: Python 类 运算符重载 
 author: Fomo
 ---
 
@@ -11,7 +11,7 @@ author: Fomo
 > 一种根据所使用的操作数更改Python中运算符的含义的做法。Python操作系统适用于内置类。
 > 但同一运算符的行为在不同的类型有所不同。例如；"+"运算符将对两个数字执行算术加法，合并两个列表并连接两个字符串。Python中的这个功能，允许相同的操作符根据上下文的不同，其含义称为运算符重载。
 
-下面以分数为例做重载运算符的示例：
+下面以分数为例做运算符重载的示例：
 ### rational.py
 
 ```python
