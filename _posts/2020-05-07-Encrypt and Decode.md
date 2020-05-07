@@ -29,13 +29,6 @@ author: Fomo
 ### hw2.py
 
 ```python
-'''
-姓名：李润泽
-学号：201701510045
-程序：文件加密/解密程序
-目的：复习Python文件的使用
-'''
-
 import os
 from os.path import exists
 
