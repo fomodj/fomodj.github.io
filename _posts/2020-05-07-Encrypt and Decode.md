@@ -14,9 +14,9 @@ author: Fomo
 加密方案是一种基于用户指定的正整数密钥和以下78个字符序列的替换密码形式：(注：“K”和“l”之间的空白字符)
 ![在这里插入图片描述](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9zMS5heDF4LmNvbS8yMDIwLzA1LzA3L1laZFo2Si5wbmc?x-oss-process=image/format,png#pic_center)
 
-整数密钥用于只对消息中的第一个字母进行加密，方法是将上述序列按该数量“移动”。 例如，一个整数密钥5将‘B’移动到加密的‘d’。移过序列的右端，就会回到序列的开头。例如，从‘Z’移动5位将加密为‘b’。
+* 整数密钥用于只对消息中的第一个字母进行加密，方法是将上述序列按该数量“移动”。 例如，一个整数密钥5将‘B’移动到加密的‘d’。移过序列的右端，就会回到序列的开头。例如，从‘Z’移动5位将加密为‘b’。
 
-消息中第一个字母的序列位置用作消息中第二个字母的移位量。如果第一个字母是‘B’，其索引位置为4 (从‘a'位于位置0，‘A'位于位置1开始，等等)，那么消息中的第二个字母向右移动4位，即‘e’移动4位到‘F’。消息中第二个字母的序列位置用作消息中第三个字母的移位量，例如第二个字母为‘e’，而‘e’的索引位置为12，那么第三个字母‘ ’(空白字符)，移位量12就到了字符‘/’，等等。任何不在上述序列中的消息字符(例如，' < '，'{')被复制到加密的消息中，而不需要修改前一个移位量，该移位量转移到要加密的消息中的下一个字母中。考虑下面这个密钥5的例子:
+* 消息中第一个字母的序列位置用作消息中第二个字母的移位量。如果第一个字母是‘B’，其索引位置为4 (从‘a'位于位置0，‘A'位于位置1开始，等等)，那么消息中的第二个字母向右移动4位，即‘e’移动4位到‘F’。消息中第二个字母的序列位置用作消息中第三个字母的移位量，例如第二个字母为‘e’，而‘e’的索引位置为12，那么第三个字母‘ ’(空白字符)，移位量12就到了字符‘/’，等等。任何不在上述序列中的消息字符(例如，' < '，'{')被复制到加密的消息中，而不需要修改前一个移位量，该移位量转移到要加密的消息中的下一个字母中。考虑下面这个密钥5的例子:
 
 ![在这里插入图片描述](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9zMS5heDF4LmNvbS8yMDIwLzA1LzA3L1laZGVYOS5wbmc?x-oss-process=image/format,png#pic_center)
 ## 程序要求：
@@ -29,6 +29,13 @@ author: Fomo
 ### hw2.py
 
 ```python
+'''
+姓名：李润泽
+学号：201701510045
+程序：文件加密/解密程序
+目的：复习Python文件的使用
+'''
+
 import os
 from os.path import exists
 
@@ -43,6 +50,12 @@ def getinfo_encryption():
     fileName = profileName +'.txt'
     if not exists(fileName):
         print("该文件", fileName, "不存在！")
+        print('以下是本目录所有txt的文件：\n')
+        path = os.getcwd()
+        files = os.listdir(path)
+        for file in files:
+            if file.endswith('.txt'):
+                print(file)
     else:
         file = open(fileName,'r')
         global data
@@ -60,6 +73,12 @@ def getinfo_decryption():
     fileName = profileName1 +'.zzz'
     if not exists(fileName):
         print("该文件", fileName, "不存在！")
+        print('以下是本目录所有zzz的文件：\n')
+        path = os.getcwd()
+        files = os.listdir(path)
+        for file in files:
+            if file.endswith('.zzz'):
+                print(file)
     else:
         file = open(fileName,'r')
         global data1
