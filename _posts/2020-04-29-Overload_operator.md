@@ -66,7 +66,7 @@ class Rational:
                     new_de = greater
                     break
                 greater += 1
-            new_rational = Rational(new_nu, new_de)
+        new_rational = Rational(new_nu, new_de)
         return new_rational
 
     def __reduce__(self):# 对有理数进行约分，最简分数
