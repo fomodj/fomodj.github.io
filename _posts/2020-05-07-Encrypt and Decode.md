@@ -81,16 +81,21 @@ def getinfo_decryption():
             data1 += line
             line = file.readline()
         return data1
-
-# 定义加密函数
-def encryption(data):
+        
+# 定义密钥
+def key():
     while True:
-        k = eval(input("请输入用于加密的正整数密钥："))
-        if isinstance(k, int) and k > 0:
-            print('已确认密钥为',k)
+        k = input("请输入正整数密钥：")
+        if k.isnumeric() == True and int(k) > 0:
+            print('已确认密钥为', k)
             break
         else:
             print('输入错误')
+    return k
+
+# 定义加密函数
+def encryption(data):
+    k = int(key())
     str = data
     str1 = ''
     # 对第一个字母进行加密，密钥为K
@@ -119,13 +124,7 @@ def encryption(data):
 
 # 定义解密函数
 def decryption(data1):
-    while True:
-        k = eval(input("请输入用于解密的正整数密钥："))
-        if isinstance(k, int) and k > 0:
-            print('已确认密钥为',k)
-            break
-        else:
-            print('输入错误')
+    k = int(key())
     str = data1
     str1 = ''
     # 对第一个字母进行解密，密钥为K
