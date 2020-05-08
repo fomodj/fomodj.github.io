@@ -112,16 +112,8 @@ def encryption(data):
         with open(profileName+'.zzz','w') as fw:
             fw.write(str1)
     else:
-        order=input("同名文件已存在，是否删除？(y/n)\n")
-        if order == 'y':
-            os.remove(profileName+'.zzz')
-            with open(profileName + '.zzz', 'w') as fw:
-                fw.write(str1)
-        else:
-            newname = input("请输入新的文件名(无须后缀)：")
-            with open(newname + '.zzz', 'w') as fw:
-                fw.write(str1)
-    print("数据加密完成！退出请按“q”键！")
+        encryption_write(str1)
+    print("数据加密完成！退出请按“q”键！\n"+'*'*30)
 
 
 
@@ -155,21 +147,43 @@ def decryption(data1):
         with open(profileName1 + '.txt', 'w') as fw:
             fw.write(str1)
     else:
-        order = input("同名文件已存在，是否删除原文件？(y/n)\n")
-        if order == 'y':
-            os.remove(profileName1 + '.txt')
-            with open(profileName1 + '.txt', 'w') as fw:
-                fw.write(str1)
-        else:
-            newname = input("请输入新的文件名(无须后缀)：")
-            with open(newname + '.txt', 'w') as fw:
-                fw.write(str1)
-    print("数据加密完成！退出请按“q”键！")
+        dencryption_write(str1)
+    print("数据解密完成！退出请按“q”键！\n"+'*'*30)
+
+# 定义加密验证写入
+def encryption_write(str1):
+    order = input("同名文件已存在，是否删除原文件？(y/n)\n")
+    if order == 'y':
+        os.remove(profileName + '.zzz')
+        with open(profileName + '.zzz', 'w') as fw:
+            fw.write(str1)
+    elif order == 'n':
+        newname = input("请输入新的文件名(无须后缀)：")
+        with open(newname + '.zzz', 'w') as fw:
+            fw.write(str1)
+    else:
+        print('指令输入错误，请重新输入指令！！！')
+        encryption_write(str1)
+
+# 定义验证解密写入
+def dencryption_write(str1):
+    order = input("同名文件已存在，是否删除原文件？(y/n)\n")
+    if order == 'y':
+        os.remove(profileName1 + '.txt')
+        with open(profileName1 + '.txt', 'w') as fw:
+            fw.write(str1)
+    elif order == 'n':
+        newname = input("请输入新的文件名(无须后缀)：")
+        with open(newname + '.txt', 'w') as fw:
+            fw.write(str1)
+    else:
+        print('指令输入错误，请重新输入指令！！！')
+        dencryption_write(str1)
 
 # 菜单切换
 def run():
     while True:
-        order = input("请输入指令：")
+        order = input("请输入菜单指令：")
         if order not in ['e','d','q']:
             print("指令输错误，请重新输入！")
         else:
